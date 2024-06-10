@@ -6,6 +6,7 @@ import traceback
 from inspect import getfullargspec
 from io import StringIO
 from time import time
+from Shivani import Owner
 
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
@@ -30,13 +31,13 @@ async def edit_or_reply(msg: Message, **kwargs):
 
 @Anony.on_edited_message(
     filters.command("eval")
-    & filters.user(OWNER_ID)
+    & filters.user(Owner)
     & ~filters.forwarded
     & ~filters.via_bot
 )
 @Anony.on_message(
     filters.command("eval")
-    & filters.user(OWNER_ID)
+    & filters.user(Owner)
     & ~filters.forwarded
     & ~filters.via_bot
 )
@@ -140,13 +141,13 @@ async def forceclose_command(_, CallbackQuery):
 
 @Anony.on_edited_message(
     filters.command("sh")
-    & filters.user(OWNER_ID)
+    & filters.user(Owner)
     & ~filters.forwarded
     & ~filters.via_bot
 )
 @Anony.on_message(
     filters.command("sh")
-    & filters.user(OWNER_ID)
+    & filters.user(Owner)
     & ~filters.forwarded
     & ~filters.via_bot
 )
